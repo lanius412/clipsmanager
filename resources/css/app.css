@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    font-size: 62.5%;
+    text-size-adjust: 100%;
+}
+
+html, body {
+    line-height: 1.5;
+}
+
+#root, body, html {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    background-color: #0e0e10;
+    color: #efeff1;
+    font-size: 1.3rem;
+}
+
+button, span, img, .tooltip {
+    user-select: none;
+}
+
+a:hover {
+    color: #a970ff;
+}
+
+input:disabled {
+    opacity: 0.4;
+}
+
+input:-webkit-autofill {
+    transition-property: color, background-color;
+    transition: 10000s ease-in-out 0s;
+}
+input::-webkit-search-cancel-button {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    padding: 4px;
+    border-radius: 4px;
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg style="color: white; font-size: 200px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18 17.94 6M18 18 6.06 6" /></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+}
+input::-webkit-search-cancel-button:hover {
+    background-color: #2f2f35;
+}
+
+input.input-error {
+    box-shadow: inset 0 0 0 2px #ff4f4d !important;
+}
+input.input-error:hover {
+    outline: none !important;
+    border-color: transparent !important;
+    box-shadow: inset 0 0 0 2px #ff8280 !important;
+}
+input.input-error:focus {
+    outline: none !important;
+    outline-offset: -1px !important;
+    box-shadow: 0 0 0 2px #ff4f4d, inset 0 0 0 2px #ff4f4d !important;
+}
+
+.form__auth input,
+.form__explore input,
+.form__settings input {
+    display: flex;
+    appearance: none;
+    background-clip: padding-box;
+    width: 100%;
+    height: 3.6rem;
+    padding: 0.5rem 1rem;
+    border: 0px solid transparent;
+    border-radius: 0.5rem;
+    box-shadow: inset 0 0 0 1px #67676b;
+    background-color: #18181b;
+    color: #efeff1;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    transition: border 100ms ease-in, background-color 100ms ease-in;
+}
+
+.form__auth input:not([disabled]):hover,
+.form__explore input:not([disabled]):hover,
+.form__settings input:not([disabled]):hover {
+    outline: none;
+    border-color: rgba(222, 222, 227, 0.4);
+    box-shadow: inset 0 0 0 2px rgba(222, 222, 227, 0.4);
+}
+.form__auth input:focus, .form__auth input:focus:hover,
+.form__explore input:focus, .form__explore input:focus:hover,
+.form__settings input:focus, .form__settings input:focus:hover {
+    outline: 0px;
+    outline-offset: -1px;
+    border-color: #a970ff;
+    box-shadow: 0 0 0 2px #a970ff, inset 0 0 0 2px #a970ff;
+}
